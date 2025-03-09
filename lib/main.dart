@@ -1,3 +1,4 @@
+import 'package:clinic_app/views/dashboard.dart';
 import 'package:clinic_app/views/login_view.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,10 @@ class ClinicApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {LoginView.id: (context) => LoginView()},
+      routes: {
+        LoginView.id: (context) => LoginView(),
+        Dashboard.id: (context) => Dashboard(),
+      },
       initialRoute: LoginView.id,
     );
   }

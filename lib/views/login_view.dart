@@ -1,4 +1,5 @@
 import 'package:clinic_app/const.dart';
+import 'package:clinic_app/views/dashboard.dart';
 import 'package:clinic_app/widgets/custom_botton.dart';
 import 'package:clinic_app/widgets/custom_divider.dart';
 import 'package:clinic_app/widgets/custom_text_field.dart';
@@ -22,12 +23,14 @@ class LoginView extends StatelessWidget {
           ),
         ),
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Spacer(flex: 1),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -39,7 +42,9 @@ class LoginView extends StatelessWidget {
                   height: 40,
                   fontColor: Colors.black,
                 ),
+
                 SizedBox(width: 80),
+
                 CustomBottom(
                   text: 'Sign Up',
                   backGroundColor: kSColor,
@@ -91,6 +96,9 @@ class LoginView extends StatelessWidget {
               width: double.infinity,
               height: 50,
               fontColor: kSColor,
+              ontap: () {
+                Navigator.pushNamed(context, Dashboard.id);
+              },
             ),
 
             CustomDivider(),
@@ -106,7 +114,9 @@ class LoginView extends StatelessWidget {
                   height: 50,
                   fontColor: kSColor,
                 ),
+
                 SizedBox(width: 20),
+
                 CustomBottom(
                   text: 'Facebook',
                   backGroundColor: kPColor,
@@ -117,6 +127,7 @@ class LoginView extends StatelessWidget {
                 ),
               ],
             ),
+
             Spacer(flex: 2),
           ],
         ),
