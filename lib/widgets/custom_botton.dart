@@ -9,6 +9,7 @@ class CustomBottom extends StatelessWidget {
   final double width;
   final double height;
   final double font;
+  double redious;
   VoidCallback? ontap;
   CustomBottom({
     super.key,
@@ -19,6 +20,7 @@ class CustomBottom extends StatelessWidget {
     required this.width,
     required this.height,
     required this.fontColor,
+    this.redious = 8,
   });
 
   @override
@@ -30,7 +32,7 @@ class CustomBottom extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: backGroundColor,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(redious),
           ),
           width: width,
           height: height,

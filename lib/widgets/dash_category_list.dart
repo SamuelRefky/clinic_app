@@ -13,14 +13,17 @@ class DashCategoryList extends StatelessWidget {
         DashboardCategoryView(
           text: 'schodule',
           icon: Icon(Icons.calendar_month, color: kSColor, size: 24),
+          shadowDigree: 1,
         ),
         DashboardCategoryView(
           text: 'Pationts',
           icon: Icon(Icons.group, color: kSColor, size: 24),
+          shadowDigree: 0.1,
         ),
         DashboardCategoryView(
           text: 'Notifications',
           icon: Icon(Icons.notification_add, color: kSColor, size: 24),
+          shadowDigree: 0.1,
         ),
       ],
     );

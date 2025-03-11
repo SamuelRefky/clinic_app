@@ -1,4 +1,5 @@
 import 'package:clinic_app/views/dashboard.dart';
+import 'package:clinic_app/views/doctor_profile.dart';
 import 'package:clinic_app/views/login_view.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class ClinicApp extends StatelessWidget {
       routes: {
         LoginView.id: (context) => LoginView(),
         Dashboard.id: (context) => Dashboard(),
+        DoctorProfile.id: (context) => DoctorProfile(),
       },
       initialRoute: LoginView.id,
     );
