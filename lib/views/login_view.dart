@@ -1,13 +1,18 @@
 import 'package:clinic_app/const.dart';
+import 'package:clinic_app/views/booking_page.dart';
 import 'package:clinic_app/views/dashboard.dart';
 import 'package:clinic_app/widgets/custom_botton.dart';
 import 'package:clinic_app/widgets/custom_divider.dart';
 import 'package:clinic_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  LoginView({super.key});
   static String id = 'login';
+  String? email;
+
+  String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +69,9 @@ class LoginView extends StatelessWidget {
                   text: 'Email',
                   width: screenWidth - 70,
                   font: headingText,
+                  onChanged: (data) {
+                    email = data;
+                  },
                 ),
               ],
             ),
@@ -76,6 +84,9 @@ class LoginView extends StatelessWidget {
                   text: 'Passsword',
                   width: screenWidth - 70,
                   font: headingText,
+                  onChanged: (data) {
+                    password = data;
+                  },
                 ),
               ],
             ),
@@ -97,7 +108,11 @@ class LoginView extends StatelessWidget {
               height: 50,
               fontColor: kSColor,
               ontap: () {
-                Navigator.pushNamed(context, Dashboard.id);
+                if (email == 'admin' && password == '123456') {
+                  Navigator.pushNamed(context, Dashboard.id);
+                } else {
+                  Navigator.pushNamed(context, BookingPage.id);
+                }
               },
             ),
 

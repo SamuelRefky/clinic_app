@@ -34,32 +34,42 @@ class DoctorProfile extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Stack(
         children: [
-          SizedBox(height: 24),
-          CirclerImage(),
-          SizedBox(height: 24),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xffF6EEFA),
-                borderRadius: BorderRadius.circular(50),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.5), // Add a shadow
-                    spreadRadius: 2,
-                    offset: Offset(0, 3),
+          Column(
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 200,
+                child: Image.asset('assets/clinic.jpg', fit: BoxFit.cover),
+              ),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(
+                          alpha: 0.5,
+                        ), // Add a shadow
+                        spreadRadius: 2,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
                   ),
-                ],
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [ProfileClinicDetails()],
+                  ),
+                ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [ProfileClinicDetails()],
-              ),
-            ),
+            ],
+          ),
+          Positioned(
+            right: MediaQuery.of(context).size.width / 4,
+            top: 50,
+            child: CirclerImage(),
           ),
         ],
       ),

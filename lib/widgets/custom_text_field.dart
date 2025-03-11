@@ -6,12 +6,14 @@ class CustomTextField extends StatelessWidget {
   final String text;
   final double width;
   final double font;
-  Function(String)? onSubmitted;
+  Function(String)? onChanged;
   TextInputType? inputType;
+  Icon? icon;
   CustomTextField({
     super.key,
-    this.onSubmitted,
+    this.onChanged,
     this.inputType,
+    this.icon,
     required this.text,
     required this.width,
     required this.font,
@@ -25,8 +27,9 @@ class CustomTextField extends StatelessWidget {
         width: width,
         child: TextField(
           keyboardType: inputType,
-          onSubmitted: onSubmitted,
+          onChanged: onChanged,
           decoration: InputDecoration(
+            prefixIcon: icon,
             hintText: text,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),

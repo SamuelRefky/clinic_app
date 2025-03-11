@@ -1,3 +1,4 @@
+import 'package:clinic_app/const.dart';
 import 'package:flutter/material.dart';
 
 class CirclerImage extends StatelessWidget {
@@ -8,6 +9,7 @@ class CirclerImage extends StatelessWidget {
     return Center(
       child: Container(
         decoration: BoxDecoration(
+          color: kSColor,
           shape: BoxShape.circle, // Makes the container circular
           border: Border.all(
             color: Colors.blue, // Border color

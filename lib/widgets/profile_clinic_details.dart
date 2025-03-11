@@ -11,6 +11,7 @@ class ProfileClinicDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 20),
           Text(
             'Doctor name',
             style: TextStyle(

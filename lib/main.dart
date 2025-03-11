@@ -1,3 +1,4 @@
+import 'package:clinic_app/views/booking_page.dart';
 import 'package:clinic_app/views/dashboard.dart';
 import 'package:clinic_app/views/doctor_profile.dart';
 import 'package:clinic_app/views/login_view.dart';
@@ -18,6 +19,7 @@ class ClinicApp extends StatelessWidget {
         LoginView.id: (context) => LoginView(),
         Dashboard.id: (context) => Dashboard(),
         DoctorProfile.id: (context) => DoctorProfile(),
+        BookingPage.id: (context) => BookingPage(),
       },
       initialRoute: LoginView.id,
     );
