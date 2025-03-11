@@ -23,8 +23,7 @@ class BookingPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
@@ -70,7 +69,7 @@ class BookingPage extends StatelessWidget {
               text: '10 AM',
               width: double.infinity,
               font: 16,
-              icon: Icon(Icons.timeline),
+              icon: Icon(Icons.schedule),
             ),
             SizedBox(height: 16),
             Text(

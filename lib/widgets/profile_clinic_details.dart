@@ -6,6 +6,7 @@ class ProfileClinicDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -30,31 +31,29 @@ class ProfileClinicDetails extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16),
+          Text('Email', style: TextStyle(fontSize: 16, fontFamily: 'Poppins')),
+          CustomTextLabel(text: 'samuelrefky@gmail.com', width: screenWidth),
+          SizedBox(height: 16),
+          Text('Phone', style: TextStyle(fontSize: 16, fontFamily: 'Poppins')),
+          CustomTextLabel(text: '01289737194', width: screenWidth),
+          SizedBox(height: 16),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextLabel(text: 'address', width: 200),
+                  Text(
+                    'address',
+                    style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
+                  ),
+                  CustomTextLabel(text: 'elmarg', width: screenWidth / 2.4),
                   SizedBox(height: 16),
                   Text(
                     'start work at',
                     style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
                   ),
-                  CustomTextLabel(text: '10 AM', width: 200),
-                  SizedBox(height: 16),
-                  Text(
-                    'Email',
-                    style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
-                  ),
-                  CustomTextLabel(text: 'samuelrefky@gmail.com', width: 200),
-                  SizedBox(height: 16),
-                  Text(
-                    'Phone',
-                    style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
-                  ),
-                  CustomTextLabel(text: '01289737194', width: 200),
+                  CustomTextLabel(text: '10 AM', width: screenWidth / 2.4),
                 ],
               ),
               SizedBox(width: 16),
@@ -62,13 +61,17 @@ class ProfileClinicDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextLabel(text: 'city', width: 160),
+                  Text(
+                    'city',
+                    style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
+                  ),
+                  CustomTextLabel(text: 'cairo', width: screenWidth / 2.4),
                   SizedBox(height: 16),
                   Text(
                     'end work at',
                     style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
                   ),
-                  CustomTextLabel(text: '10 PM', width: 160),
+                  CustomTextLabel(text: '10 PM', width: screenWidth / 2.4),
                 ],
               ),
             ],
