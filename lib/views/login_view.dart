@@ -1,6 +1,6 @@
 import 'package:clinic_app/const.dart';
-import 'package:clinic_app/views/booking_page.dart';
 import 'package:clinic_app/views/dashboard.dart';
+import 'package:clinic_app/views/patient_home_page.dart';
 import 'package:clinic_app/views/register_view.dart';
 import 'package:clinic_app/widgets/custom_botton.dart';
 import 'package:clinic_app/widgets/custom_divider.dart';
@@ -35,7 +35,7 @@ class LoginView extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 100),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -43,7 +43,7 @@ class LoginView extends StatelessWidget {
                   height: 70,
                   alignment: Alignment.topCenter,
                   child: CustomBottom(
-                    text: 'LOGIN',
+                    text: 'Login',
                     backGroundColor: kSColor,
                     font: subheadingsText,
                     width: 100,
@@ -125,7 +125,7 @@ class LoginView extends StatelessWidget {
                 if (email == 'admin' && password == '123456') {
                   Navigator.pushNamed(context, Dashboard.id);
                 } else {
-                  Navigator.pushNamed(context, BookingPage.id);
+                  Navigator.pushNamed(context, PatientHomePage.id);
                 }
               },
             ),

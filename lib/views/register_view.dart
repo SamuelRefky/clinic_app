@@ -73,20 +73,6 @@ class RegisterView extends StatelessWidget {
             ),
 
             Row(
-              children: [
-                Icon(Icons.email, color: kPColor, size: 30),
-                SizedBox(width: 8),
-                CustomTextField(
-                  text: 'Email',
-                  width: screenWidth - 70,
-                  font: headingText,
-                  onChanged: (data) {
-                    email = data;
-                  },
-                ),
-              ],
-            ),
-            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(Icons.person, color: kPColor, size: 30),

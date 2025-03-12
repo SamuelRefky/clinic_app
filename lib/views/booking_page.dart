@@ -9,6 +9,7 @@ class BookingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: kSColor,
       appBar: AppBar(
@@ -21,96 +22,110 @@ class BookingPage extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: ListView(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Image.asset(
-                'assets/clinic.jpg',
-                width: double.infinity,
-                height: 200,
-                fit: BoxFit.cover,
+      body: ListView(
+        physics: NeverScrollableScrollPhysics(),
+        children: [
+          SizedBox(
+            height: screenHeight / 1.23,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: ListView(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'assets/clinic.jpg',
+                      width: double.infinity,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'HCM Healthcare clinic',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(onPressed: () {}, icon: Icon(Icons.map)),
+                    ],
+                  ),
+                  Text(
+                    '256 nguyen van Linh, Tan Thanh, Quan7 ',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 30),
+                  Text(
+                    'Choose date',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  CustomTextField(
+                    text: '04/3/2020',
+                    width: double.infinity,
+                    font: 16,
+                    icon: Icon(Icons.calendar_month),
+                  ),
+
+                  SizedBox(height: 16),
+                  Text(
+                    'Choose time',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  CustomTextField(
+                    text: '10 AM',
+                    width: double.infinity,
+                    font: 16,
+                    icon: Icon(Icons.schedule),
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'patient name',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  CustomTextField(
+                    text: 'enter your name',
+                    width: double.infinity,
+                    font: 16,
+                  ),
+                  CustomBottom(
+                    text: 'Confirm Appointment',
+                    backGroundColor: Colors.blue,
+                    font: subheadingsText,
+                    width: double.infinity,
+                    height: 60,
+                    fontColor: kSColor,
+                    ontap: () {},
+                  ),
+                  SizedBox(height: 50),
+                ],
               ),
             ),
-            Row(
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'HCM Healthcare clinic',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.home),
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.map)),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.calendar_month_rounded),
+                  color: kPColor,
+                  iconSize: 36,
+                ),
+                IconButton(onPressed: () {}, icon: Icon(Icons.person)),
               ],
             ),
-            Text(
-              '256 nguyen van Linh, Tan Thanh, Quan7 ',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 30),
-            Text(
-              'Choose date',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            CustomTextField(
-              text: '04/3/2020',
-              width: double.infinity,
-              font: 16,
-              icon: Icon(Icons.calendar_month),
-            ),
-
-            SizedBox(height: 16),
-            Text(
-              'Choose time',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            CustomTextField(
-              text: '10 AM',
-              width: double.infinity,
-              font: 16,
-              icon: Icon(Icons.schedule),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'patient name',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            CustomTextField(
-              text: 'enter your name',
-              width: double.infinity,
-              font: 16,
-            ),
-            Spacer(flex: 1),
-            CustomBottom(
-              text: 'Confirm Appointment',
-              backGroundColor: Colors.blue,
-              font: subheadingsText,
-              width: double.infinity,
-              height: 60,
-              fontColor: kSColor,
-              ontap: () {
-                Navigator.pushNamed(context, BookingPage.id);
-              },
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.calendar_month_rounded),
-                    ),
-                    IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
