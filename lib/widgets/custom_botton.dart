@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class CustomBottom extends StatelessWidget {
@@ -39,9 +38,11 @@ class CustomBottom extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: GoogleFonts.roboto(
+
+              style: TextStyle(
                 color: fontColor,
                 fontSize: font,
+                fontFamily: 'Roboto',
                 fontWeight: FontWeight.w600,
               ),
             ),

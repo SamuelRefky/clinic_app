@@ -1,7 +1,6 @@
 import 'package:clinic_app/const.dart';
 import 'package:clinic_app/widgets/custom_botton.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PatientSchedulCard extends StatelessWidget {
   const PatientSchedulCard({super.key, required this.name, required this.date});
@@ -31,8 +30,14 @@ class PatientSchedulCard extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(name, style: GoogleFonts.roboto(fontSize: bodyText)),
-                Text(date, style: GoogleFonts.roboto(fontSize: bodyText)),
+                Text(
+                  name,
+                  style: TextStyle(fontSize: bodyText, fontFamily: 'Roboto'),
+                ),
+                Text(
+                  date,
+                  style: TextStyle(fontSize: bodyText, fontFamily: 'Roboto'),
+                ),
               ],
             ),
             Spacer(flex: 1),

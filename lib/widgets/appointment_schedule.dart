@@ -2,7 +2,6 @@ import 'package:clinic_app/const.dart';
 import 'package:clinic_app/widgets/custom_botton.dart';
 import 'package:clinic_app/widgets/patient_schedul_card.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentSchedule extends StatelessWidget {
   const AppointmentSchedule({super.key});
@@ -28,7 +27,8 @@ class AppointmentSchedule extends StatelessWidget {
           children: [
             Text(
               'Appointment Schedule',
-              style: GoogleFonts.roboto(
+              style: TextStyle(
+                fontFamily: 'Poppins',
                 fontSize: headingText,
                 fontWeight: FontWeight.bold,
               ),
@@ -36,7 +36,10 @@ class AppointmentSchedule extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('today', style: GoogleFonts.roboto(fontSize: bodyText)),
+                Text(
+                  'today',
+                  style: TextStyle(fontFamily: 'Poppins', fontSize: bodyText),
+                ),
                 Spacer(flex: 1),
                 CustomBottom(
                   text: 'view calendar',

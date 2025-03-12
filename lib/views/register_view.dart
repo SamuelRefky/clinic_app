@@ -1,17 +1,15 @@
 import 'package:clinic_app/const.dart';
 import 'package:clinic_app/views/booking_page.dart';
 import 'package:clinic_app/views/dashboard.dart';
-import 'package:clinic_app/views/register_view.dart';
 import 'package:clinic_app/widgets/custom_botton.dart';
 import 'package:clinic_app/widgets/custom_divider.dart';
 import 'package:clinic_app/widgets/custom_text_field.dart';
-import 'package:clinic_app/widgets/no_animation_page_route.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class LoginView extends StatelessWidget {
-  LoginView({super.key});
-  static String id = 'login';
+class RegisterView extends StatelessWidget {
+  RegisterView({super.key});
+  static String id = 'register';
   String? email;
 
   String? password;
@@ -22,6 +20,8 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       backgroundColor: kSColor,
       appBar: AppBar(
+        leading: null,
+        automaticallyImplyLeading: false,
         backgroundColor: kSColor,
         title: Center(
           child: Text(
@@ -41,14 +41,17 @@ class LoginView extends StatelessWidget {
               children: [
                 Container(
                   height: 70,
-                  alignment: Alignment.topCenter,
+                  alignment: Alignment.bottomCenter,
                   child: CustomBottom(
-                    text: 'LOGIN',
+                    text: 'Login',
                     backGroundColor: kSColor,
                     font: subheadingsText,
                     width: 100,
                     height: 40,
                     fontColor: Colors.black,
+                    ontap: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
 
@@ -56,20 +59,14 @@ class LoginView extends StatelessWidget {
 
                 Container(
                   height: 70,
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.topCenter,
                   child: CustomBottom(
-                    text: 'Sign Up',
+                    text: 'SIGN UP',
                     backGroundColor: kSColor,
                     font: subheadingsText,
                     width: 100,
                     height: 40,
                     fontColor: Colors.black,
-                    ontap: () {
-                      Navigator.push(
-                        context,
-                        NoAnimationPageRoute(page: RegisterView()),
-                      );
-                    },
                   ),
                 ),
               ],
@@ -81,6 +78,58 @@ class LoginView extends StatelessWidget {
                 SizedBox(width: 8),
                 CustomTextField(
                   text: 'Email',
+                  width: screenWidth - 70,
+                  font: headingText,
+                  onChanged: (data) {
+                    email = data;
+                  },
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.person, color: kPColor, size: 30),
+                SizedBox(width: 8),
+                CustomTextField(
+                  text: 'First name',
+                  width: screenWidth / 2.5,
+                  font: headingText,
+                  onChanged: (data) {
+                    email = data;
+                  },
+                ),
+                SizedBox(width: 8),
+                CustomTextField(
+                  text: 'Last name',
+                  width: screenWidth / 2.5,
+                  font: headingText,
+                  onChanged: (data) {
+                    email = data;
+                  },
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.email, color: kPColor, size: 30),
+                SizedBox(width: 8),
+                CustomTextField(
+                  text: 'Email',
+                  width: screenWidth - 70,
+                  font: headingText,
+                  onChanged: (data) {
+                    email = data;
+                  },
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.phone, color: kPColor, size: 30),
+                SizedBox(width: 8),
+                CustomTextField(
+                  text: 'Phone',
                   width: screenWidth - 70,
                   font: headingText,
                   onChanged: (data) {
@@ -104,18 +153,23 @@ class LoginView extends StatelessWidget {
                 ),
               ],
             ),
-
-            CustomBottom(
-              text: 'Forgot Password?',
-              backGroundColor: kSColor,
-              font: bodyText,
-              width: double.infinity,
-              height: 30,
-              fontColor: kTextColor,
+            Row(
+              children: [
+                Icon(Icons.check, color: kPColor, size: 30),
+                SizedBox(width: 8),
+                CustomTextField(
+                  text: 'Verfied Passsword',
+                  width: screenWidth - 70,
+                  font: headingText,
+                  onChanged: (data) {
+                    password = data;
+                  },
+                ),
+              ],
             ),
 
             CustomBottom(
-              text: 'Login',
+              text: 'Register',
               backGroundColor: kPColor,
               font: subheadingsText,
               width: double.infinity,
